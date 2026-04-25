@@ -99,17 +99,6 @@ Instead of applying generic fixes, decisions were made based on context:
 
 ---
 
-## 📁 Project Structure
-
-```
-data/
-  └── cleaned_dataset_sample.csv
-
-README.md
-```
-
----
-
 ## 🔗 Data Source
 
 Due to file size limitations, only a sample dataset is included.
