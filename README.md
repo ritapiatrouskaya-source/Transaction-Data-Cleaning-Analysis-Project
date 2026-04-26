@@ -90,6 +90,11 @@ Instead of applying generic fixes, decisions were made based on context:
 
 ---
 
+## Dashboard Preview
+
+<img width="2493" height="1312" alt="image" src="https://github.com/user-attachments/assets/9728d010-afb0-462c-83ff-e57d79e6862f" />
+
+
 ## 💡 Key Insights
 
 * Data quality issues were concentrated in **Price and Customer_ID**
