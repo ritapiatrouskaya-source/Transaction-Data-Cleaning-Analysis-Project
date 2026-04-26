@@ -101,6 +101,10 @@ Instead of applying generic fixes, decisions were made based on context:
 * Categorical inconsistencies required structured normalization
 * Quantity distribution confirmed the need for robust statistics (median)
 * A noticeable share of data remains **unknown or invalid**, highlighting real-world data limitations
+* ~50% of transactions are completed successfully
+* ~17% of transactions have unknown status → indicates data quality issues
+* Transaction volume is stable over time
+* Product categories show balanced distribution
 
 ---
 
@@ -118,6 +122,9 @@ https://docs.google.com/spreadsheets/d/1zB99hsAEu_oJI8xqXdgc-fkkvIcL2x2u/edit?us
 
 * Google Sheets (data cleaning & transformation)
 * Data visualization techniques
+* Power BI
+* DAX
+* 
 
 ---
 
