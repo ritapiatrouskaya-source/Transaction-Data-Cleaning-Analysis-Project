@@ -1,30 +1,27 @@
 # 🧹 Transaction Data Cleaning & Analysis
 
-This project focuses on cleaning and analyzing a transactional dataset (~100k rows) with multiple real-world data quality issues.
+## 📌 Project Overview
+
+This project focuses on cleaning and analyzing a real-world transactional dataset (~100k rows) with multiple data quality issues.
+
+The objective was not only to clean the data, but to apply **context-aware decisions** while preserving the integrity of the dataset.
 
 ---
 
-## 📊 Overview
+## 🚨 Key Data Quality Issues
 
-The dataset contained a variety of inconsistencies, including missing values, invalid formats, and noisy categorical data.
-The goal was not only to clean the data, but to make **informed decisions without distorting the underlying information**.
-
----
-
-## 🚨 Data Quality Issues
-
-The raw dataset included:
+The raw dataset contained significant inconsistencies:
 
 * ~33% missing values in **Price**
 * ~33% missing **Customer IDs**
 * ~16.7% missing **Transaction Status**
 * Invalid dates (e.g. *2025-02-30*)
 * Duplicate records
-* Mixed formats in **Price** (€, $, commas, dots, scientific notation)
+* Mixed formats in **Price** (€, $, commas, scientific notation)
 * Noisy categorical data:
 
-  * Transaction Status (e.g. *complete, Completed, carc Pending*)
-  * Product Names (e.g. *Coff, Smar, Headp*)
+  * Transaction Status (*complete, Completed, carc Pending*)
+  * Product Names (*Coff, Smar, Headp*)
   * Payment Methods inconsistencies
 * Extreme outliers in **Quantity** (-10 to 800)
 
@@ -32,7 +29,7 @@ The raw dataset included:
 
 ## 🛠️ Data Cleaning Approach
 
-Instead of applying generic fixes, decisions were made based on context:
+Instead of applying generic rules, cleaning decisions were based on context:
 
 ### 🔹 Identifiers
 
@@ -41,30 +38,30 @@ Instead of applying generic fixes, decisions were made based on context:
 ### 🔹 Dates
 
 * Standardized formats
-* Flagged invalid dates instead of forcing correction
+* Flagged invalid dates instead of forcing corrections
 
 ### 🔹 Price
 
-* Removed currency symbols and standardized decimal formats
+* Removed currency symbols and unified formats
 * Converted text to numeric values
-* Identified and excluded erroneous values (e.g. scientific notation)
-* Retained negative values as potential returns
+* Excluded erroneous values (e.g. scientific notation)
+* Preserved negative values as potential returns
 
 ### 🔹 Quantity
 
-* Detected strong skewness and outliers
-* Used **median imputation** instead of mean
+* Detected skewness and extreme outliers
+* Applied **median imputation** (robust to outliers)
 
 ### 🔹 Categorical Features
 
-* Standardized `Transaction_Status` (e.g. complete → completed)
-* Cleaned `Payment_Method`
-* Reconstructed `Product_Name` using pattern matching
-* Assigned **"Unknown"** to ambiguous values (e.g. "H", "S")
+* Standardized transaction status values
+* Cleaned payment methods
+* Reconstructed product names using pattern matching
+* Assigned **"Unknown"** to ambiguous values
 
 ---
 
-## 📈 Visual Analysis
+## 📊 Visual Analysis
 
 ### 1. Data Quality Overview
 
@@ -87,54 +84,46 @@ Instead of applying generic fixes, decisions were made based on context:
 
 <img width="758" height="562" alt="image" src="https://github.com/user-attachments/assets/188327d6-647c-4f57-9200-85f7ff98ae2a" />
 
-
----
-
 ## Dashboard Preview
 
 <img width="2493" height="1312" alt="image" src="https://github.com/user-attachments/assets/9728d010-afb0-462c-83ff-e57d79e6862f" />
 
+---
 
 ## 💡 Key Insights
 
-* Data quality issues were concentrated in **Price and Customer_ID**
-* Categorical inconsistencies required structured normalization
-* Quantity distribution confirmed the need for robust statistics (median)
-* A noticeable share of data remains **unknown or invalid**, highlighting real-world data limitations
 * ~50% of transactions are completed successfully
-* ~17% of transactions have unknown status → indicates data quality issues
+* ~17% of transactions remain **unknown**, indicating persistent data quality issues
 * Transaction volume is stable over time
-* Product categories show balanced distribution
+* Product categories show a balanced distribution (~18K each)
+* Data quality issues are concentrated in **Price** and **Customer_ID**
 
 ---
 
-## 🔗 Data Source
+## 📁 Data Source
 
 Due to file size limitations, only a sample dataset is included.
 
 👉 Full cleaning process (Google Sheets):
+[https://docs.google.com/spreadsheets/d/1zB99hsAEu_oJI8xqXdgc-fkkvIcL2x2u/edit](https://docs.google.com/spreadsheets/d/1zB99hsAEu_oJI8xqXdgc-fkkvIcL2x2u/edit?usp=sharing&ouid=101706672073021986247&rtpof=true&sd=true)
 
-https://docs.google.com/spreadsheets/d/1zB99hsAEu_oJI8xqXdgc-fkkvIcL2x2u/edit?usp=sharing&ouid=101706672073021986247&rtpof=true&sd=true
+👉 Dataset source (Kaggle):
+https://www.kaggle.com/datasets/alfarisbachmid/dirty-financial-transactions-dataset
 
 ---
 
 ## 🚀 Tools Used
 
-* Google Sheets (data cleaning & transformation)
-* Data visualization techniques
 * Power BI
 * DAX
-* 
+* Google Sheets
+* Data Cleaning Techniques
 
 ---
 
 ## 📌 Conclusion
 
 Data cleaning is not about making data perfect —
-it’s about making **responsible decisions while preserving reality**.
+it is about making **responsible, context-aware decisions** while preserving reality.
 
 
-
-## Kaggle
-
-https://www.kaggle.com/datasets/alfarisbachmid/dirty-financial-transactions-dataset?utm_source=chatgpt.com
