@@ -105,9 +105,11 @@ Instead of applying generic rules, cleaning decisions were based on context:
 Due to file size limitations, only a sample dataset is included.
 
 👉 Full cleaning process (Google Sheets):
-[https://docs.google.com/spreadsheets/d/1zB99hsAEu_oJI8xqXdgc-fkkvIcL2x2u/edit](https://docs.google.com/spreadsheets/d/1zB99hsAEu_oJI8xqXdgc-fkkvIcL2x2u/edit?usp=sharing&ouid=101706672073021986247&rtpof=true&sd=true)
+
+https://docs.google.com/spreadsheets/d/1zB99hsAEu_oJI8xqXdgc-fkkvIcL2x2u/edit?usp=sharing&ouid=101706672073021986247&rtpof=true&sd=true
 
 👉 Dataset source (Kaggle):
+
 https://www.kaggle.com/datasets/alfarisbachmid/dirty-financial-transactions-dataset
 
 ---
